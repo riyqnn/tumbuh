@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F9F8F6;
+  --foreground: #1A2F24;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui;
+  --font-outfit: var(--font-outfit), ui-sans-serif, system-ui;
+  --font-inter: var(--font-inter), ui-sans-serif, system-ui;
+  
+  /* Custom Animations */
+  --animate-blob: blob 7s infinite;
+  
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
