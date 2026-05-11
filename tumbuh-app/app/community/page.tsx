@@ -42,7 +42,7 @@ export default function CommunityHub() {
           authority: wallet.publicKey,
           plot: plotPda,
           systemProgram: SystemProgram.programId,
-        })
+        } as any)
         .rpc();
         
       alert(`Success! Plot registered. TX: ${tx}`);
