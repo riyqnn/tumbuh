@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${outfit.variable} font-sans bg-[#F9F8F6] text-[#1A2F24] antialiased min-h-screen pt-20`}
+        className={`${inter.variable} ${outfit.variable} font-sans bg-[#F9F8F6] text-[#1A2F24] antialiased min-h-screen pt-[116px]`}
       >
         <AppWalletProvider>
           <LiveTicker />

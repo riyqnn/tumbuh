@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 import Link from "next/link";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
-import { Sprout } from "lucide-react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [mounted, setMounted] = useState(false);
@@ -14,13 +14,19 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#F9F8F6]/70 backdrop-blur-xl border-b border-white/40 shadow-sm">
+    <nav className="fixed top-9 left-0 right-0 z-50 bg-[#F9F8F6]/70 backdrop-blur-xl border-b border-white/40 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center gap-3 group cursor-pointer">
-            <div className="bg-emerald-600 p-2.5 rounded-xl shadow-lg shadow-emerald-600/20 group-hover:scale-105 transition-transform">
-              <Sprout className="w-6 h-6 text-white" />
-            </div>
+            <Link href="/">
+              <Image
+                src="/tumbuh.png"
+                alt="Tumbuh Logo"
+                width={56}
+                height={56}
+                className="rounded-xl group-hover:scale-105 transition-transform"
+              />
+            </Link>
             <Link href="/">
               <span className="text-2xl font-black font-outfit tracking-tight text-[#1A2F24]">
                 TUMBUH
