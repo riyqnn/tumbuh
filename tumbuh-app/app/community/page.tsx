@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Sprout, MapPin, CheckCircle, Upload, Network, ShieldCheck, Database } from "lucide-react";
+import { Sprout, MapPin, Upload, Network, ShieldCheck, Database } from "lucide-react";
 import { useWallet, useAnchorWallet, useConnection } from "@solana/wallet-adapter-react";
 import { AnchorProvider, Program } from "@coral-xyz/anchor";
 import { PublicKey, SystemProgram } from "@solana/web3.js";
@@ -201,34 +201,25 @@ export default function CommunityHub() {
                       <div className="grid grid-cols-2 gap-4">
                         <div>
                           <label className="block text-xs font-bold text-stone-500 mb-1">Latitude</label>
-                          <input 
-                            type="text" 
-                            readOnly 
+                          <input
+                            type="text"
                             value={location.lat}
-                            placeholder="-6.200000" 
-                            className="w-full px-4 py-3 bg-white border border-stone-200 rounded-xl outline-none font-mono text-stone-600 cursor-not-allowed" 
+                            onChange={(e) => setLocation({ ...location, lat: e.target.value })}
+                            placeholder="-6.200000"
+                            className="w-full px-4 py-3 bg-white border border-stone-200 rounded-xl outline-none font-mono text-stone-600 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all"
                           />
                         </div>
                         <div>
                           <label className="block text-xs font-bold text-stone-500 mb-1">Longitude</label>
-                          <input 
-                            type="text" 
-                            readOnly 
+                          <input
+                            type="text"
                             value={location.lng}
-                            placeholder="106.816666" 
-                            className="w-full px-4 py-3 bg-white border border-stone-200 rounded-xl outline-none font-mono text-stone-600 cursor-not-allowed" 
+                            onChange={(e) => setLocation({ ...location, lng: e.target.value })}
+                            placeholder="106.816666"
+                            className="w-full px-4 py-3 bg-white border border-stone-200 rounded-xl outline-none font-mono text-stone-600 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 transition-all"
                           />
                         </div>
                       </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-bold text-[#1A2F24] mb-2">Oracle Verifier Key</label>
-                      <div className="w-full px-5 py-4 bg-emerald-50/50 border border-emerald-100 rounded-xl font-mono text-sm text-emerald-800 flex items-center gap-2">
-                         <ShieldCheck className="w-4 h-4 text-emerald-500" />
-                         {publicKey ? publicKey.toBase58() : "Connect wallet to assign verifier..."}
-                      </div>
-                      <p className="text-xs text-stone-500 mt-3 flex items-center gap-2"><CheckCircle className="w-3 h-3 text-emerald-500" /> Automatically assigned to your connected wallet.</p>
                     </div>
 
                     <button 
